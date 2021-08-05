@@ -1,0 +1,59 @@
+
+// Lista um pedido especifico pelo código
+GET
+http://localhost:8080/pedido/1
+
+
+// Listar todos os pedidos
+GET
+http://localhost:8080/pedido/lista
+
+
+// cadastrar um novo pedido
+POST
+http://localhost:8080/pedido
+
+    {
+        "descricao": "PEDIDO 01",
+        "quantidade": 5,
+        "quantidadeAptovada": null,
+        "status": "PENDENTE",
+        "dataPedido": "2021-07-21",
+        "dataVencimento": "2021-07-28"
+    }
+
+
+// atualizar o pedido
+PUT
+http://localhost:8080/pedido
+
+    {
+        "codigo": 1,
+        "descricao": "PEDIDO 01",
+        "quantidade": 100,
+        "quantidadeAptovada": null,
+        "status": "PENDENTE",
+        "dataPedido": "2021-07-21",
+        "dataVencimento": "2021-07-28"
+    }
+	
+	
+// exlcuir um pedido usando o código	
+DELETE
+http://localhost:8080/pedido/1
+
+
+// Modificar o status de pedido
+PUT
+http://localhost:8080/pedido/1?status=CANCELADO
+
+
+// Modificar data de vencimento
+PUT
+http://localhost:8080/pedido/vencimento
+
+{
+	"codigo": 1,
+	"dataVencimento": "2021-07-30"
+}
+
